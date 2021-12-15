@@ -1,0 +1,183 @@
+* {
+   margin: 0;
+   padding: 0;
+}
+
+.container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+   background: #131313;
+}
+
+.container .card {
+   width: 320px;
+   height: 420px;
+   background: #232323;
+   border-radius: 20px;
+   position: relative;
+   overflow: hidden;
+}
+
+.container .card::before {
+   content: "";
+   position: absolute;
+   background: #9bdc28;
+   height: 100%;
+   width: 100%;
+   clip-path: circle(150px at 80% 20%);
+   transition: 0.5s ease-in-out;
+}
+
+.container .card:hover::before {
+   clip-path: circle(300px at 80% -20%);
+}
+
+.container .card::after {
+   content: "Nike";
+   font-size: 11rem;
+   position: absolute;
+   z-index: 9;
+   font-style: italic;
+   color: rgba(255, 255, 255, 0.4);
+   top: 30%;
+}
+
+.container .card .img {
+   height: 220px;
+   position: absolute;
+   z-index: 10;
+   transform: translateY(30%);
+   transition: 0.5s;
+}
+
+.container .card:hover .img {
+   transform: translateY(0);
+}
+
+.container .card .img img {
+   width: 270px;
+   transform: rotate(-25deg) scaleX(-1);
+}
+
+.container .card .content {
+   position: absolute;
+   bottom: 15px;
+   width: 100%;
+   text-align: center;
+   transition: all 1s;
+   z-index: 10;
+   margin-top: -20px;
+}
+
+.container .card .content h2 {
+   font-size: 2rem;
+   color: #fff;
+   transform: translateY(50px);
+   transition: 0.5s;
+}
+
+.container .card:hover .content h2 {
+   transform: translateY(-10px);
+}
+
+.container .card .content .size,
+.container .card .content .color {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 8px 0;
+   transform: 0.5s;
+   opacity: 0;
+   visibility: hidden;
+   transform: translateY(10px);
+   transition: 0.5s;
+}
+
+.container .card .content .size h3,
+.container .card .content .color h3 {
+   color: #fff;
+   font-size: 14px;
+   text-transform: uppercase;
+   margin-right: 10px;
+}
+
+.container .card .content .size span {
+   width: 26px;
+   height: 26px;
+   text-align: center;
+   line-height: 26px;
+   font-size: 14px;
+   color: #111;
+   background: #fff;
+   margin: 0 5px;
+   transition: 0.5s;
+   border-radius: 4px;
+   cursor: pointer;
+}
+
+.container .card .content .size span:hover {
+   background: #9bdc28;
+}
+
+.container .card:hover .content .size {
+   opacity: 1;
+   visibility: visible;
+   transform: translateY(0);
+   transition-delay: 0.2s;
+}
+
+.container .card:hover .content .color {
+   opacity: 1;
+   visibility: visible;
+   transform: translateY(0);
+   transition-delay: 0.5s;
+}
+
+.container .card .content .color span {
+   width: 20px;
+   height: 20px;
+   border-radius: 50%;
+   margin: 0 5px;
+   cursor: pointer;
+}
+
+.container .card .content .color span:nth-child(2) {
+   background: #9bdc28;
+}
+
+.container .card .content .color span:nth-child(3) {
+   background: #ff0000;
+}
+
+.container .card .content .color span:nth-child(4) {
+   background: #2802ff;
+}
+
+.container .card .content a {
+   display: inline-block;
+   padding: 10px 20px;
+   background: #fff;
+   border-radius: 4px;
+   margin-top: 10px;
+   text-decoration: none;
+   font-weight: 600;
+   color: #111;
+   opacity: 0;
+   transform: translateY(50px);
+   transition: 0.5s;
+   cursor: pointer;
+}
+
+.container .card .content a:hover {
+   background: #ff0000;
+   transition: 0.3s;
+   color: white;
+}
+
+.container .card:hover .content a {
+   opacity: 1;
+   transform: translateY(0);
+   transition-delay: 0.7s;
+}
